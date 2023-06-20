@@ -5,7 +5,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) -->
 
-![Build Status](https://github.com/shantanuparabumd/project_legion/actions/workflows/build_and_codecov.yml/badge.svg)
+![Build Status](https://github.com/shantanuparabumd/project_legion/actions/workflows/project_legion_git_ci.yml/badge.svg)
 
 ## Authors
 
