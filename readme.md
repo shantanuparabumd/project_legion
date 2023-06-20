@@ -2,8 +2,10 @@
 # Project Legion
 <!-- 
 [![codecov](https://codecov.io/gh/jayprajapati009/project_chakravyu/branch/main/graph/badge.svg?token=0C30FZ9SC6)](https://codecov.io/gh/jayprajapati009/project_chakravyu)
-![Build Status](https://github.com/jayprajapati009/project_chakravyu/actions/workflows/build_and_codecov.yml/badge.svg)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) -->
+
+![Build Status](https://github.com/shantanuparabumd/project_legion/actions/workflows/build_and_codecov.yml/badge.svg)
 
 ## Authors
 
@@ -20,7 +22,7 @@
 ## Dependencies
 
 - OS: Ubuntu Linux 22.04
-- ROS Version: ROS2 Humble Hawksbill
+- ROS Version: ROS2 Galactic Hawksbill
 - Python: Python 3
 - C++
 
