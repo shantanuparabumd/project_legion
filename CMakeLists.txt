@@ -7,9 +7,35 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rosbag2_cpp REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(ament_cmake_gtest)
+find_package(xacro REQUIRED)
+
+
+
+# xacro_add_files("urdf/robotaxi.urdf.xacro" INSTALL DESTINATION urdf/)
+
+install(
+  DIRECTORY include/project_legion
+  DESTINATION include
+)
+
+install(DIRECTORY
+  launch
+  worlds
+  urdf
+  meshes
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
