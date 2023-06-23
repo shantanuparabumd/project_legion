@@ -22,8 +22,7 @@
 ## Dependencies
 
 - OS: Ubuntu Linux 22.04
-- ROS Version: ROS2 Galactic Hawksbill
-- Python: Python 3
+- ROS Version: ROS2 Galactic
 - C++
 
 ## System Architecture
