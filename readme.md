@@ -7,6 +7,9 @@
 
 ![Build Status](https://github.com/shantanuparabumd/project_legion/actions/workflows/project_legion_git_ci.yml/badge.svg)
 
+
+![Project Legion](/images/robotaxi.jpg)
+
 ## Authors
 
 |Name|ID|Email|
@@ -46,3 +49,5 @@ Installing ROS Controller
 
 Install xacro module to read xacro files
 `pip install xacro`
+
+
