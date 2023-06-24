@@ -4,6 +4,73 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="robotaxi" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="body_color">
+  <visual>
+    <material>
+      <ambient>0.250980392156863 0.250980392156863 0.250980392156863 1</ambient>
+      <diffuse>0.250980392156863 0.250980392156863 0.250980392156863 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="axle_color">
+  <visual>
+    <material>
+      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="side_pane_color">
+  <visual>
+    <material>
+      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="top_color">
+  <visual>
+    <material>
+      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="wheel_color">
+  <visual>
+    <material>
+      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="lidar_color">
+  <visual>
+    <material>
+      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
   <link
     name="body">
     <inertial>
@@ -985,4 +1052,67 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+  <gazebo reference="body">
+    <xacro:body_color />
+  </gazebo>
+  <gazebo reference="side_pane_1">
+    <xacro:side_pane_color />
+  </gazebo>
+  <gazebo reference="side_pane_2">
+    <xacro:side_pane_color />
+  </gazebo>
+  <gazebo reference="side_pane_3">
+    <xacro:side_pane_color />
+  </gazebo>
+  <gazebo reference="side_pane_4">
+    <xacro:side_pane_color />
+  </gazebo>
+  
+  
+  <gazebo reference="front_right_axle">
+    <xacro:axle_color />
+  </gazebo>
+  <gazebo reference="front_left_axle">
+    <xacro:axle_color />
+  </gazebo>
+  <gazebo reference="back_right_axle">
+    <xacro:axle_color />
+  </gazebo>
+  <gazebo reference="back_left_axle">
+    <xacro:axle_color />
+  </gazebo>
+
+
+  <gazebo reference="front_right_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+  <gazebo reference="front_left_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+  <gazebo reference="back_right_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+  <gazebo reference="back_left_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+
+
+  <gazebo reference="lidar_front_left">
+    <xacro:lidar_color />
+  </gazebo>
+  <gazebo reference="lidar_front_right">
+    <xacro:lidar_color />
+  </gazebo>
+  <gazebo reference="lidar_back_left">
+    <xacro:lidar_color />
+  </gazebo>
+  <gazebo reference="lidar_back_right">
+    <xacro:lidar_color />
+  </gazebo>
+
+  <gazebo reference="top">
+    <xacro:top_color />
+  </gazebo>
+
 </robot>

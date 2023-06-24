@@ -2,22 +2,90 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot  name="robotaxi" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot
+  name="robotaxi" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="body_color">
+  <visual>
+    <material>
+      <ambient>0.250980392156863 0.250980392156863 0.250980392156863 1</ambient>
+      <diffuse>0.250980392156863 0.250980392156863 0.250980392156863 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="axle_color">
+  <visual>
+    <material>
+      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="side_pane_color">
+  <visual>
+    <material>
+      <ambient>0.501960784313725 1 0.501960784313725 1</ambient>
+      <diffuse>0.501960784313725 1 0.501960784313725 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="top_color">
+  <visual>
+    <material>
+      <ambient>0 0.752941176470588 0 1</ambient>
+      <diffuse>0 0.752941176470588 0 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="wheel_color">
+  <visual>
+    <material>
+      <ambient>0 0 0 1</ambient>
+      <diffuse>0 0 0 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="lidar_color">
+  <visual>
+    <material>
+      <ambient>0 0 0 1</ambient>
+      <diffuse>0 0 0 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
   <link
     name="body">
     <inertial>
       <origin
-        xyz="-3.40969326113787E-05 -1.55139179626814E-05 0.984476420828284"
+        xyz="-5.21780361655602E-05 -2.37407212439023E-05 0.604812969920948"
         rpy="0 0 0" />
       <mass
-        value="7062.99841256932" />
+        value="4615.47805567614" />
       <inertia
-        ixx="2779.69153524293"
-        ixy="0.0130537985025844"
-        ixz="-0.074560285709414"
-        iyy="11898.0975209909"
-        iyz="-0.0273565484571444"
-        izz="12806.0341693142" />
+        ixx="1863.24455406167"
+        ixy="0.0132219930650718"
+        ixz="-0.0745602857100425"
+        iyy="8715.44296968045"
+        iyz="-0.0273565484550983"
+        izz="9003.50747380204" />
     </inertial>
     <visual>
       <origin
@@ -30,7 +98,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
       </material>
     </visual>
     <collision>
@@ -105,16 +173,16 @@
     name="front_right_wheel">
     <inertial>
       <origin
-        xyz="-1.58019056769578 -1.04124193078514 0.309999999999997"
+        xyz="1.57025410376083 -1.04055974237639 0.309999999999996"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
-        ixx="19.6593954325899"
-        ixy="-0.775721213261626"
-        ixz="-1.12534049438089E-15"
-        iyy="33.7627965853084"
-        iyz="5.12575321634251E-14"
+        ixx="19.7127728680101"
+        ixy="1.16262531983733"
+        ixz="5.70065896608079E-15"
+        iyy="33.7094191498882"
+        iyz="5.93281734338829E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -152,7 +220,7 @@
     <child
       link="front_right_wheel" />
     <axis
-      xyz="0.08222 0.99661 0" />
+      xyz="0.0822198916962624 0.996614212927678 0" />
     <limit
       lower="0"
       upper="0"
@@ -227,10 +295,10 @@
         value="220.204654088327" />
       <inertia
         ixx="25.1304300235974"
-        ixy="6.91590337281264"
-        ixz="2.62007454425615E-14"
+        ixy="6.91590337281265"
+        ixz="2.78109008982202E-14"
         iyy="28.2917619943008"
-        iyz="3.1857375012075E-14"
+        iyz="2.83392710451218E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -268,7 +336,7 @@
     <child
       link="front_left_wheel" />
     <axis
-      xyz="-0.62337 -0.78192 0" />
+      xyz="-0.623373961813521 -0.781923847783731 0" />
     <limit
       lower="0"
       upper="0"
@@ -340,13 +408,13 @@
         xyz="-1.56099765956285 1.03967619271508 0.310000000000004"
         rpy="0 0 0" />
       <mass
-        value="220.204654088326" />
+        value="220.204654088327" />
       <inertia
         ixx="19.7817557340667"
         ixy="1.52068003676715"
-        ixz="-1.46712089567244E-16"
+        ixz="-1.41066843422813E-16"
         iyy="33.6404362838315"
-        iyz="5.3547004248261E-14"
+        iyz="5.35623170831363E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -384,7 +452,7 @@
     <child
       link="back_left_wheel" />
     <axis
-      xyz="-0.10781 -0.99417 0" />
+      xyz="-0.107805398797207 -0.99417201529221 0" />
     <limit
       lower="0"
       upper="0"
@@ -460,9 +528,9 @@
       <inertia
         ixx="19.6593954325899"
         ixy="-0.775721213261626"
-        ixz="-1.12757594335517E-15"
+        ixz="-1.12449279054662E-15"
         iyy="33.7627965853084"
-        iyz="5.12534151456868E-14"
+        iyz="5.12487286095604E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -500,7 +568,7 @@
     <child
       link="back_right_wheel" />
     <axis
-      xyz="-0.054755 0.9985 0" />
+      xyz="-0.0547547589597665 0.998499832935018 0" />
     <limit
       lower="0"
       upper="0"
@@ -517,10 +585,10 @@
         value="8.51764060451499" />
       <inertia
         ixx="0.0642189157299355"
-        ixy="-0.000191353707477662"
-        ixz="0.00017449312202714"
+        ixy="-0.000191353707477661"
+        ixz="0.000174493122027139"
         iyy="0.0642189157299355"
-        iyz="-0.000174493122027057"
+        iyz="-0.000174493122027053"
         izz="0.0429541548113749" />
     </inertial>
     <visual>
@@ -570,10 +638,10 @@
         value="8.51764060451499" />
       <inertia
         ixx="0.0642189157299355"
-        ixy="0.00019135370747766"
+        ixy="0.000191353707477661"
         ixz="0.000174493122027142"
         iyy="0.0642189157299355"
-        iyz="0.000174493122027216"
+        iyz="0.000174493122027214"
         izz="0.0429541548113749" />
     </inertial>
     <visual>
@@ -670,7 +738,7 @@
     name="lidar_back_right">
     <inertial>
       <origin
-        xyz="-2.10240622729716 -1.10240622729718 1.78815355406656"
+        xyz="-2.10240622729716 -1.10240622729717 1.78815355406656"
         rpy="0 0 0" />
       <mass
         value="8.51764060451498" />
@@ -719,4 +787,332 @@
     <axis
       xyz="0 0 0" />
   </joint>
+  <link
+    name="side_pane_1">
+    <inertial>
+      <origin
+        xyz="1.19387690613411E-15 0.939999999999996 1.22578533508363"
+        rpy="0 0 0" />
+      <mass
+        value="269.579902102743" />
+      <inertia
+        ixx="29.0495518679719"
+        ixy="-1.20383938267813E-16"
+        ixz="3.27421223583015E-14"
+        iyy="417.804106229136"
+        iyz="9.89684859766926E-14"
+        izz="389.401546126211" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="side_pane_1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="side_pane_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="side_pane_2">
+    <inertial>
+      <origin
+        xyz="7.36854275917892E-17 -0.940000000000004 1.22578533508363"
+        rpy="0 0 0" />
+      <mass
+        value="269.579902102743" />
+      <inertia
+        ixx="29.0495518679719"
+        ixy="-1.20383938267801E-16"
+        ixz="2.9415137108934E-14"
+        iyy="417.804106229136"
+        iyz="9.89935929190605E-14"
+        izz="389.401546126211" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="side_pane_2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="side_pane_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="side_pane_3">
+    <inertial>
+      <origin
+        xyz="-1.94 -4.0299328481463E-15 1.16174583422535"
+        rpy="0 0 0" />
+      <mass
+        value="238.283902102743" />
+      <inertia
+        ixx="91.2445420486072"
+        ixy="-2.58236719045494E-16"
+        ixz="1.67397202198221E-16"
+        iyy="30.1909069158719"
+        iyz="-1.1589443866755E-13"
+        izz="61.6255164977819" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="side_pane_3_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="side_pane_3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="side_pane_4">
+    <inertial>
+      <origin
+        xyz="8.11876186905901E-17 -0.16174583422535 -0.0599999999999998"
+        rpy="0 0 0" />
+      <mass
+        value="238.283902102743" />
+      <inertia
+        ixx="30.1909069158719"
+        ixy="-1.35061898246685E-14"
+        ixz="3.03407211392029E-16"
+        iyy="61.6255164977819"
+        iyz="4.1134269100746E-16"
+        izz="91.2445420486072" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/side_pane_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="side_pane_4_joint"
+    type="fixed">
+    <origin
+      xyz="2 0 1"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="body" />
+    <child
+      link="side_pane_4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="top">
+    <inertial>
+      <origin
+        xyz="1.579007960937E-15 -8.23001329418906E-15 2.058474990647"
+        rpy="0 0 0" />
+      <mass
+        value="1431.79274848221" />
+      <inertia
+        ixx="675.858793348103"
+        ixy="-0.000168194562486687"
+        ixz="5.13110389472562E-13"
+        iyy="2286.6645250204"
+        iyz="-1.99695025936543E-12"
+        izz="2900.47257026417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/top.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/top.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="top" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <gazebo reference="body">
+    <xacro:body_color />
+  </gazebo>
+  <gazebo reference="side_pane_1">
+    <xacro:side_pane_color />
+  </gazebo>
+  <gazebo reference="side_pane_2">
+    <xacro:side_pane_color />
+  </gazebo>
+  <gazebo reference="side_pane_3">
+    <xacro:side_pane_color />
+  </gazebo>
+  <gazebo reference="side_pane_4">
+    <xacro:side_pane_color />
+  </gazebo>
+  
+  
+  <gazebo reference="front_right_axle">
+    <xacro:axle_color />
+  </gazebo>
+  <gazebo reference="front_left_axle">
+    <xacro:axle_color />
+  </gazebo>
+  <gazebo reference="back_right_axle">
+    <xacro:axle_color />
+  </gazebo>
+  <gazebo reference="back_left_axle">
+    <xacro:axle_color />
+  </gazebo>
+
+
+  <gazebo reference="front_right_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+  <gazebo reference="front_left_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+  <gazebo reference="back_right_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+  <gazebo reference="back_left_wheel">
+    <xacro:wheel_color />
+  </gazebo>
+
+
+  <gazebo reference="lidar_front_left">
+    <xacro:lidar_color />
+  </gazebo>
+  <gazebo reference="lidar_front_right">
+    <xacro:lidar_color />
+  </gazebo>
+  <gazebo reference="lidar_back_left">
+    <xacro:lidar_color />
+  </gazebo>
+  <gazebo reference="lidar_back_right">
+    <xacro:lidar_color />
+  </gazebo>
+
+  <gazebo reference="top">
+    <xacro:top_color />
+  </gazebo>
+
 </robot>

@@ -35,3 +35,14 @@ The essential task of the taxi is to pick a passenger randomly spawned in the wo
 |AIP Backlog and Worklog Sheet|[Link](https://docs.google.com/spreadsheets/d/1OLjYREJhVSBwzK9YCMAjV7O8FSent7a0hvpAadGcQXk/edit?usp=sharing)|
 <!-- |Sprint and Review Meeting Notes|[Link](https://docs.google.com/document/d/1zADA51S8-DCuGPjZB7dvrBzD6DiS--uvvF-nh4I-Mvw/edit?usp=sharing)| -->
 
+
+
+# Dependeny Installation and Setup
+
+Installing ROS Controller
+
+`sudo apt-get install ros-galactic-ros2-control`  
+`sudo apt-get install ros-galactic-ros2-controllers`
+
+Install xacro module to read xacro files
+`pip install xacro`
