@@ -3,6 +3,8 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
+from launch.actions import IncludeLaunchDescription,ExecuteProcess,RegisterEventHandler
+from launch.event_handlers import OnProcessExit
 
 from launch_ros.actions import Node
 import xacro
@@ -72,18 +74,62 @@ def generate_launch_description():
     # Robot State Publisher
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
-    robot_state_publisher_node = Node(
+    robot_state_publisher= Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         parameters=[{'use_sim_time': use_sim_time, 'robot_description': xml}],
         output="screen"
     )
 
+    controller = 'wheel'
+    args = [controller]
+    controller_spawner = Node(
+                package="controller_manager",
+                executable="spawner",
+                name=controller + "_spawner",
+                arguments=["joint_state_broadcaster", "--controller-manager","/controller_manager"]
+            )
+    box_bot_name = "robotaxi"
+    spawn_controller_1_name = box_bot_name + "_spawn_controller_joint_state_broadcaster"
+    spawn_controller_2_name = box_bot_name + "_spawn_controller_joint_trajectory_controller"
+    spawn_controller_3_name = box_bot_name + "_spawn_controller_velocity_controller"
+    controller_manager_name = box_bot_name + "/controller_manager"
+
+    spawn_controller_1 = Node(
+        package="controller_manager",
+        executable="spawner",
+        name=spawn_controller_1_name,
+        namespace=box_bot_name,
+        arguments=["joint_state_broadcaster", "--controller-manager", controller_manager_name],
+        output="screen"
+    )
+
+    spawn_controller_2 = Node(
+        package="controller_manager",
+        executable="spawner",
+        name=spawn_controller_2_name,
+        namespace=box_bot_name,
+        arguments=["joint_trajectory_controller", "--controller-manager", controller_manager_name],
+        output="screen"
+    )
+
+    spawn_controller_3 = Node(
+        package="controller_manager",
+        executable="spawner",
+        name=spawn_controller_3_name,
+        namespace=box_bot_name,
+        arguments=["velocity_controller", "--controller-manager", controller_manager_name],
+        output="screen"
+    )
+
     # create and return launch description object
     return LaunchDescription(
-        [
-            spawn_robot,
+        [   
             publish_robot_description,
-            robot_state_publisher_node
+            robot_state_publisher,
+            spawn_robot,
+            spawn_controller_1,
+            spawn_controller_2,
+            spawn_controller_3
         ]
     )
