@@ -19,6 +19,8 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(ament_cmake_gtest)
 find_package(xacro REQUIRED)
+find_package(ros2_control REQUIRED)
+find_package(robot_state_publisher REQUIRED)
 
 
 
@@ -34,6 +36,7 @@ install(DIRECTORY
   worlds
   urdf
   meshes
+  config
   DESTINATION share/${PROJECT_NAME}/
 )
 

@@ -21,6 +21,8 @@
   <depend>rosbag2_cpp</depend>
   <depend>tf2</depend>
   <depend>tf2_ros</depend>
+  <depend>ros2_control</depend>
+  <depend>robot_state_publisher</depend>
   
 
   <test_depend>ament_lint_auto</test_depend>
