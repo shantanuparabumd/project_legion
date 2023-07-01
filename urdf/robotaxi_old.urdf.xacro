@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="robotaxi">
+  name="robotaxi" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:macro name="body_color">
   <visual>
@@ -75,17 +75,17 @@
     name="body">
     <inertial>
       <origin
-        xyz="-5.21780361656553E-05 -2.37407212439034E-05 0.604812969920948"
+        xyz="-5.21780361655602E-05 -2.37407212439023E-05 0.604812969920948"
         rpy="0 0 0" />
       <mass
         value="4615.47805567614" />
       <inertia
         ixx="1863.24455406167"
-        ixy="0.0132219930650691"
-        ixz="-0.0745602857101254"
+        ixy="0.0132219930650718"
+        ixz="-0.0745602857100425"
         iyy="8715.44296968045"
-        iyz="-0.0273565484551131"
-        izz="9003.50747380203" />
+        iyz="-0.0273565484550983"
+        izz="9003.50747380204" />
     </inertial>
     <visual>
       <origin
@@ -115,7 +115,7 @@
     name="front_right_axel">
     <inertial>
       <origin
-        xyz="-0.00745692269118803 -0.090387884139878 0.106936663484027"
+        xyz="1.59254307730881 -0.770387884139879 0.306936663484025"
         rpy="0 0 0" />
       <mass
         value="4.73802510796172" />
@@ -155,7 +155,7 @@
     name="front_right_axel_joint"
     type="revolute">
     <origin
-      xyz="1.6 -0.680000000000001 0.199999999999998"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -173,16 +173,16 @@
     name="front_right_wheel">
     <inertial>
       <origin
-        xyz="-6.45153368084017E-05 -0.000782011509483205 -1.11022302462516E-16"
+        xyz="1.57025410376083 -1.04055974237639 0.309999999999996"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
         ixx="19.7127728680101"
         ixy="1.16262531983733"
-        ixz="5.60424286950757E-15"
+        ixz="5.70065896608079E-15"
         iyy="33.7094191498882"
-        iyz="5.89373897821999E-14"
+        iyz="5.93281734338829E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -211,9 +211,9 @@
   </link>
   <joint
     name="front_right_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="-0.0296813809023602 -0.359777730866907 0.109999999999998"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="front_right_axel" />
@@ -231,7 +231,7 @@
     name="front_left_axel">
     <inertial>
       <origin
-        xyz="0.0565368692558958 0.0709165541990985 0.106936664135948"
+        xyz="1.6565368692559 0.750916554199098 0.30693666413595"
         rpy="0 0 0" />
       <mass
         value="4.73802513910441" />
@@ -271,7 +271,7 @@
     name="front_left_axel_joint"
     type="revolute">
     <origin
-      xyz="1.6 0.68 0.200000000000002"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -289,16 +289,16 @@
     name="front_left_wheel">
     <inertial>
       <origin
-        xyz="0.000489141742639143 0.000613550800876106 -5.55111512312578E-17"
+        xyz="1.82552714195732 0.962888059850802 0.310000000000004"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
         ixx="25.1304300235974"
         ixy="6.91590337281265"
-        ixz="2.78048991352224E-14"
+        ixz="2.78109008982202E-14"
         iyy="28.2917619943008"
-        iyz="2.83576334348763E-14"
+        iyz="2.83392710451218E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -327,9 +327,9 @@
   </link>
   <joint
     name="front_left_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0.22503800021468 0.282274509049927 0.110000000000001"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="front_left_axel" />
@@ -347,7 +347,7 @@
     name="back_left_axel">
     <inertial>
       <origin
-        xyz="0.0097773994104382 0.0901663896845278 0.106936663157124"
+        xyz="-1.59022260058956 0.770166389684527 0.306936663157127"
         rpy="0 0 0" />
       <mass
         value="4.73802514179161" />
@@ -387,7 +387,7 @@
     name="back_left_axel_joint"
     type="revolute">
     <origin
-      xyz="-1.6 0.679999999999999 0.200000000000002"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -405,16 +405,16 @@
     name="back_left_wheel">
     <inertial>
       <origin
-        xyz="8.45914713538676E-05 0.000780095194589547 5.55111512312578E-17"
+        xyz="-1.56099765956285 1.03967619271508 0.310000000000004"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
         ixx="19.7817557340667"
         ixy="1.52068003676715"
-        ixz="-1.4753654276074E-16"
+        ixz="-1.41066843422813E-16"
         iyy="33.6404362838315"
-        iyz="5.35549915294688E-14"
+        iyz="5.35623170831363E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -443,9 +443,9 @@
   </link>
   <joint
     name="back_left_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0.0389177489657917 0.358896097520487 0.110000000000001"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="back_left_axel" />
@@ -463,7 +463,7 @@
     name="back_right_axel">
     <inertial>
       <origin
-        xyz="0.00496598832173212 -0.0905588974643843 0.106936665235941"
+        xyz="-1.59503401167827 -0.770558897464385 0.306936665235939"
         rpy="0 0 0" />
       <mass
         value="4.73802497254448" />
@@ -503,7 +503,7 @@
     name="back_right_axel_joint"
     type="revolute">
     <origin
-      xyz="-1.6 -0.680000000000001 0.199999999999998"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -521,16 +521,16 @@
     name="back_right_wheel">
     <inertial>
       <origin
-        xyz="4.29643197439322E-05 -0.000783491095595057 1.66533453693773E-16"
+        xyz="-1.58019056769578 -1.04124193078514 0.309999999999997"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
         ixx="19.6593954325899"
         ixy="-0.775721213261626"
-        ixz="-1.12194595756566E-15"
+        ixz="-1.12449279054662E-15"
         iyy="33.7627965853084"
-        iyz="5.12561448128763E-14"
+        iyz="5.12487286095604E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -559,9 +559,9 @@
   </link>
   <joint
     name="back_right_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0.0197664679844756 -0.360458439689542 0.109999999999999"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="back_right_axel" />
@@ -579,16 +579,16 @@
     name="lidar_front_right">
     <inertial>
       <origin
-        xyz="-0.0040420953035909 0.00404209530359112 -0.131846445933433"
+        xyz="2.10240622729717 -1.10240622729716 1.78815355406656"
         rpy="0 0 0" />
       <mass
         value="8.51764060451499" />
       <inertia
         ixx="0.0642189157299355"
-        ixy="-0.000191353707477662"
-        ixz="0.00017449312202714"
+        ixy="-0.000191353707477661"
+        ixz="0.000174493122027139"
         iyy="0.0642189157299355"
-        iyz="-0.000174493122027057"
+        iyz="-0.000174493122027053"
         izz="0.0429541548113749" />
     </inertial>
     <visual>
@@ -619,7 +619,7 @@
     name="lidar_front_right_joint"
     type="fixed">
     <origin
-      xyz="2.10644832260076 -1.10644832260075 1.92"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -632,7 +632,7 @@
     name="lidar_front_left">
     <inertial>
       <origin
-        xyz="-0.0040420953035909 -0.00404209530359023 -0.131846445933433"
+        xyz="2.10240622729716 1.10240622729716 1.78815355406657"
         rpy="0 0 0" />
       <mass
         value="8.51764060451499" />
@@ -672,7 +672,7 @@
     name="lidar_front_left_joint"
     type="fixed">
     <origin
-      xyz="2.10644832260075 1.10644832260076 1.92"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -685,7 +685,7 @@
     name="lidar_back_left">
     <inertial>
       <origin
-        xyz="0.00404209530359001 -0.00404209530359023 -0.131846445933433"
+        xyz="-2.10240622729717 1.10240622729715 1.78815355406657"
         rpy="0 0 0" />
       <mass
         value="8.51764060451498" />
@@ -725,7 +725,7 @@
     name="lidar_back_left_joint"
     type="fixed">
     <origin
-      xyz="-2.10644832260076 1.10644832260074 1.92"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -738,7 +738,7 @@
     name="lidar_back_right">
     <inertial>
       <origin
-        xyz="0.00404209530359001 0.0040420953035909 -0.131846445933433"
+        xyz="-2.10240622729716 -1.10240622729717 1.78815355406656"
         rpy="0 0 0" />
       <mass
         value="8.51764060451498" />
@@ -778,7 +778,7 @@
     name="lidar_back_right_joint"
     type="fixed">
     <origin
-      xyz="-2.10644832260075 -1.10644832260076 1.92"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -791,16 +791,16 @@
     name="side_pane_1">
     <inertial>
       <origin
-        xyz="1.16326750898592E-16 -0.0600000000000008 0.225785335083629"
+        xyz="1.19387690613411E-15 0.939999999999996 1.22578533508363"
         rpy="0 0 0" />
       <mass
         value="269.579902102743" />
       <inertia
         ixx="29.0495518679719"
-        ixy="-1.20383938267796E-16"
-        ixz="2.77270150877661E-14"
+        ixy="-1.20383938267813E-16"
+        ixz="3.27421223583015E-14"
         iyy="417.804106229136"
-        iyz="9.90699315364669E-14"
+        iyz="9.89684859766926E-14"
         izz="389.401546126211" />
     </inertial>
     <visual>
@@ -831,7 +831,7 @@
     name="side_pane_1_joint"
     type="fixed">
     <origin
-      xyz="0 0.999999999999997 1"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -844,16 +844,16 @@
     name="side_pane_2">
     <inertial>
       <origin
-        xyz="1.42066406747502E-16 -0.0600000000000011 0.225785335083629"
+        xyz="7.36854275917892E-17 -0.940000000000004 1.22578533508363"
         rpy="0 0 0" />
       <mass
         value="269.579902102743" />
       <inertia
         ixx="29.0495518679719"
-        ixy="-1.20383938267802E-16"
-        ixz="2.95831600997074E-14"
+        ixy="-1.20383938267801E-16"
+        ixz="2.9415137108934E-14"
         iyy="417.804106229136"
-        iyz="9.90076534888227E-14"
+        iyz="9.89935929190605E-14"
         izz="389.401546126211" />
     </inertial>
     <visual>
@@ -884,7 +884,7 @@
     name="side_pane_2_joint"
     type="fixed">
     <origin
-      xyz="0 -0.88 1"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -897,7 +897,7 @@
     name="side_pane_3">
     <inertial>
       <origin
-        xyz="0.0600000000000001 -5.31535442847841E-16 0.16174583422535"
+        xyz="-1.94 -4.0299328481463E-15 1.16174583422535"
         rpy="0 0 0" />
       <mass
         value="238.283902102743" />
@@ -906,7 +906,7 @@
         ixy="-2.58236719045494E-16"
         ixz="1.67397202198221E-16"
         iyy="30.1909069158719"
-        iyz="-1.15365873460716E-13"
+        iyz="-1.1589443866755E-13"
         izz="61.6255164977819" />
     </inertial>
     <visual>
@@ -937,7 +937,7 @@
     name="side_pane_3_joint"
     type="fixed">
     <origin
-      xyz="-2 0 1"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -950,17 +950,17 @@
     name="side_pane_4">
     <inertial>
       <origin
-        xyz="-0.0599999999999998 -6.46632113124857E-16 0.16174583422535"
+        xyz="8.11876186905901E-17 -0.16174583422535 -0.0599999999999998"
         rpy="0 0 0" />
       <mass
         value="238.283902102743" />
       <inertia
-        ixx="91.2445420486072"
-        ixy="-3.03407211392028E-16"
-        ixz="-4.15490215971411E-16"
-        iyy="30.1909069158719"
-        iyz="-1.23477209187437E-13"
-        izz="61.6255164977819" />
+        ixx="30.1909069158719"
+        ixy="-1.35061898246685E-14"
+        ixz="3.03407211392029E-16"
+        iyy="61.6255164977819"
+        iyz="4.1134269100746E-16"
+        izz="91.2445420486072" />
     </inertial>
     <visual>
       <origin
@@ -991,7 +991,7 @@
     type="fixed">
     <origin
       xyz="2 0 1"
-      rpy="0 0 0" />
+      rpy="-1.5707963267949 0 -1.5707963267949" />
     <parent
       link="body" />
     <child
@@ -1003,16 +1003,16 @@
     name="top">
     <inertial>
       <origin
-        xyz="1.11795670913679E-15 -4.75570435698576E-17 -0.161525009353001"
+        xyz="1.579007960937E-15 -8.23001329418906E-15 2.058474990647"
         rpy="0 0 0" />
       <mass
         value="1431.79274848221" />
       <inertia
         ixx="675.858793348103"
         ixy="-0.000168194562486687"
-        ixz="5.06178673563019E-13"
+        ixz="5.13110389472562E-13"
         iyy="2286.6645250204"
-        iyz="-1.99421702931628E-12"
+        iyz="-1.99695025936543E-12"
         izz="2900.47257026417" />
     </inertial>
     <visual>
@@ -1043,7 +1043,7 @@
     name="top_joint"
     type="fixed">
     <origin
-      xyz="0 0 2.22"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="body" />
@@ -1053,7 +1053,7 @@
       xyz="0 0 0" />
   </joint>
 
-   <gazebo reference="body">
+  <gazebo reference="body">
     <xacro:body_color />
   </gazebo>
   <gazebo reference="side_pane_1">
@@ -1116,6 +1116,7 @@
   </gazebo>
 
 
+
   <!-- Adding Controllers -->
   <ros2_control name="GazeboSystem" type="system">
   <hardware>
@@ -1161,5 +1162,5 @@
         <parameters>$(find project_legion)/config/control.yaml</parameters>
       </plugin>
   </gazebo>
-  
+
 </robot>
