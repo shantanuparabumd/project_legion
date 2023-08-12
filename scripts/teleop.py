@@ -25,7 +25,7 @@ class Robot(Node):
         # self.joint_positions_pub.publish(joint_positions)
 
         joint_positions = Float64MultiArray()
-        joint_positions.data = [1.0, 1.0, 1.0, 1.0]  # Replace with your joint positions
+        joint_positions.data = [1.5, 1.5, 1.5, 1.5]  # Replace with your joint positions
         self.joint_trajectory_pub.publish(joint_positions)
 
         # # Publish JointState message

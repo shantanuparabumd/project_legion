@@ -10,7 +10,7 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    velocity_controller:
+    joint_velocity_controller:
         type: velocity_controllers/JointGroupVelocityController
 
     # forward_position_controller:
@@ -40,7 +40,7 @@ joint_position_controller:
       - velocity
 
 
-velocity_controller:
+joint_velocity_controller:
   ros__parameters:
     joints:
       - back_right_wheel_joint
