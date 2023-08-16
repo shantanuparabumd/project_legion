@@ -19,10 +19,10 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(ament_cmake_gtest)
 find_package(xacro REQUIRED)
+find_package(ros2_control REQUIRED)
+find_package(robot_state_publisher REQUIRED)
 
 
-
-# xacro_add_files("urdf/robotaxi.urdf.xacro" INSTALL DESTINATION urdf/)
 
 install(
   DIRECTORY include/project_legion
@@ -34,12 +34,16 @@ install(DIRECTORY
   worlds
   urdf
   meshes
+  config
+  rviz
   DESTINATION share/${PROJECT_NAME}/
 )
 
 install(
   PROGRAMS
   launch/robot_description_publisher.py
+  scripts/teleop.py
+  scripts/key_board.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

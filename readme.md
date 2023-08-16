@@ -42,12 +42,34 @@ The essential task of the taxi is to pick a passenger randomly spawned in the wo
 
 # Dependeny Installation and Setup
 
-Installing ROS Controller
+Installing ROS Controller (Run this in home directory)
 
-`sudo apt-get install ros-galactic-ros2-control`  
-`sudo apt-get install ros-galactic-ros2-controllers`
+`sudo apt install ros-galactic-ros2-control ros-galactic-ros2-controllers ros-galactic-gazebo-ros2-control`
 
 Install xacro module to read xacro files
 `pip install xacro`
 
+Launch gazebo using launch file and then run the below 2 commands to start the controllers
+# Manually Starting Controllers (Top 2 Only)
 
+`ros2 control load_controller --set-state start joint_state_broadcaster`
+
+`ros2 control load_controller --set-state start velocity_controller`
+
+`ros2 control load_controller --set-state start joint_position_controller`
+
+# Check Topics
+
+`ros2 topic list`
+
+# Publish Velocity
+
+`ros2 topic pub /velocity_controller/commands std_msgs/msg/Float64MultiArray "{data: [1.0,-1.0,1.0,-1.0],layout: {dim:[], data_offset: 1"}}`
+
+`ros2 topic pub /joint_position_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.3,0.3,0.3,0.3],layout: {dim:[], data_offset: 1"}}`
+
+Tried using this command but did not works try new commands
+
+https://www.youtube.com/watch?v=BmLdjLNJHoY
+
+sudo apt-get install ros-galactic-joint-state-publisher-gui
