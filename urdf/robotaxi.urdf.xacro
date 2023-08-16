@@ -101,7 +101,7 @@
           filename="package://project_legion/meshes/base_link.STL" />
       </geometry>
       <material
-        name="body_mat">
+        name="">
         <color
           rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
       </material>
@@ -147,7 +147,7 @@
           filename="package://project_legion/meshes/front_right_axel.STL" />
       </geometry>
       <material
-        name="axel_mat">
+        name="">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -205,9 +205,9 @@
           filename="package://project_legion/meshes/front_right_wheel.STL" />
       </geometry>
       <material
-        name="wheel_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -258,7 +258,7 @@
           filename="package://project_legion/meshes/front_left_axel.STL" />
       </geometry>
       <material
-        name="axel_mat">
+        name="">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -316,9 +316,9 @@
           filename="package://project_legion/meshes/front_left_wheel.STL" />
       </geometry>
       <material
-        name="wheel_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -369,7 +369,7 @@
           filename="package://project_legion/meshes/back_right_axel.STL" />
       </geometry>
       <material
-        name="axel_mat">
+        name="">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -427,9 +427,9 @@
           filename="package://project_legion/meshes/back_right_wheel.STL" />
       </geometry>
       <material
-        name="wheel_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -480,7 +480,7 @@
           filename="package://project_legion/meshes/back_left_axel.STL" />
       </geometry>
       <material
-        name="axel_mat">
+        name="">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -538,9 +538,9 @@
           filename="package://project_legion/meshes/back_left_wheel.STL" />
       </geometry>
       <material
-        name="wheel_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -591,9 +591,9 @@
           filename="package://project_legion/meshes/front.STL" />
       </geometry>
       <material
-        name="side_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.501960784313725 1 0.501960784313725 1" />
       </material>
     </visual>
     <collision>
@@ -644,9 +644,9 @@
           filename="package://project_legion/meshes/back.STL" />
       </geometry>
       <material
-        name="side_mat_1">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.501960784313725 1 0.501960784313725 1" />
       </material>
     </visual>
     <collision>
@@ -697,9 +697,9 @@
           filename="package://project_legion/meshes/right.STL" />
       </geometry>
       <material
-        name="side_mat_2">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.501960784313725 1 0.501960784313725 1" />
       </material>
     </visual>
     <collision>
@@ -750,9 +750,9 @@
           filename="package://project_legion/meshes/left.STL" />
       </geometry>
       <material
-        name="side_mat_3">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.501960784313725 1 0.501960784313725 1" />
       </material>
     </visual>
     <collision>
@@ -803,9 +803,9 @@
           filename="package://project_legion/meshes/top.STL" />
       </geometry>
       <material
-        name="top_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0.752941176470588 0 1" />
       </material>
     </visual>
     <collision>
@@ -856,9 +856,9 @@
           filename="package://project_legion/meshes/front_right_lidar.STL" />
       </geometry>
       <material
-        name="lidar_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -909,9 +909,9 @@
           filename="package://project_legion/meshes/front_left_lidar.STL" />
       </geometry>
       <material
-        name="lidar_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -962,9 +962,9 @@
           filename="package://project_legion/meshes/back_right_lidar.STL" />
       </geometry>
       <material
-        name="lidar_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -1015,9 +1015,9 @@
           filename="package://project_legion/meshes/back_left_lidar.STL" />
       </geometry>
       <material
-        name="lidar_mat">
+        name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>

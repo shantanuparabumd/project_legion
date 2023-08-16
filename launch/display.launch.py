@@ -1,13 +1,17 @@
 from launch import LaunchDescription
 from launch.actions import LogInfo
 from launch_ros.actions import Node
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration
+
 from ament_index_python.packages import get_package_share_directory
+
 import os
-from launch.substitutions import Command
+
 import launch_ros.descriptions
 import launch
 import xacro
+
+from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     
@@ -27,8 +31,11 @@ def generate_launch_description():
     ####### DATA INPUT END ##########
     pkg_share = launch_ros.substitutions.FindPackageShare(package=package_description).find(package_description)
 
-    default_rviz_config_path = os.path.join(pkg_share, 'rviz/robotaxi.rviz')
+    # default_rviz_config_path = os.path.join(pkg_share, 'rviz/display_default.rviz')
 
+    default_rviz_config_path = PathJoinSubstitution(
+        [FindPackageShare("project_legion"), "rviz", "display_default.rviz"]
+    )
 
     if use_urdf:
         # print("URDF URDF URDF URDF URDF URDF URDF URDF URDF URDF URDF ==>")
@@ -49,8 +56,9 @@ def generate_launch_description():
             package_description), "urdf", xacro_file) # Update this with the actual URDF file path
     
     # RVIZ Configuration
-    rviz_config_dir = os.path.join(get_package_share_directory(
-        package_description), 'rviz', 'robotaxi.rviz')
+    rviz_config_dir = PathJoinSubstitution(
+        [FindPackageShare("project_legion"), "rviz", "display_default.rviz"]
+    )
 
     rviz_node = Node(
         package='rviz2',
