@@ -102,6 +102,15 @@ def generate_launch_description():
             output='screen',
         )
     
+    # Static TF Transform
+    tf=Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_transform_publisher',
+        output='screen',
+        arguments=['1', '0', '0', '0', '0', '0', '1', '/map',  '/dummy_link'  ],
+    )
+    
     return LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='gui', default_value='True',
                                             description='Flag to enable joint_state_publisher_gui'),
@@ -114,5 +123,6 @@ def generate_launch_description():
         robot_state_publisher,
         rviz_node,
         joint_state_gui,
+        tf,
         
     ])

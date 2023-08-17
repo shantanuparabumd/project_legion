@@ -138,7 +138,7 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='static_transform_publisher',
         output='screen',
-        arguments=['1', '0', '0', '0', '0', '0', '1', '/map',  '/dummy_link' ,'10' ],
+        arguments=['1', '0', '0', '0', '0', '0', '1', '/map',  '/dummy_link'  ],
     )
 
     # create and return launch description object

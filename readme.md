@@ -15,7 +15,6 @@
 |Name|ID|Email|
 |:---:|:---:|:---:|
 |Shantanu Parab|119208625|sparab@umd.edu|
-|Vineet Singh |119340547|vsing03@umd.edu|
 
 
 ## Introduction
