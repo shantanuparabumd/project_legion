@@ -118,6 +118,7 @@
   </link>
 
   <joint name="dummy_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0" />
         <parent link="dummy_link"/>
         <child link="base_link"/>
   </joint>
@@ -1189,7 +1190,7 @@
   <sensor name="lidar" type="ray">
     <pose>0.215 0 0.215 0 0 0</pose>
     <always_on>true</always_on>
-    <visualize>false</visualize>
+    <visualize>true</visualize>
     <update_rate>5</update_rate>
     <ray>
       <scan>
@@ -1225,7 +1226,7 @@
   <sensor name="lidar" type="ray">
     <pose>0.215 0 0.215 0 0 0</pose>
     <always_on>true</always_on>
-    <visualize>false</visualize>
+    <visualize>true</visualize>
     <update_rate>5</update_rate>
     <ray>
       <scan>
@@ -1261,7 +1262,7 @@
   <sensor name="lidar" type="ray">
     <pose>0.215 0 0.215 0 0 0</pose>
     <always_on>true</always_on>
-    <visualize>false</visualize>
+    <visualize>true</visualize>
     <update_rate>5</update_rate>
     <ray>
       <scan>
@@ -1297,7 +1298,7 @@
   <sensor name="lidar" type="ray">
     <pose>0.215 0 0.215 0 0 0</pose>
     <always_on>true</always_on>
-    <visualize>false</visualize>
+    <visualize>true</visualize>
     <update_rate>5</update_rate>
     <ray>
       <scan>

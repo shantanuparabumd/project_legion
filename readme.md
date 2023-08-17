@@ -15,7 +15,6 @@
 |Name|ID|Email|
 |:---:|:---:|:---:|
 |Shantanu Parab|119208625|sparab@umd.edu|
-|Vineet Singh |119340547|vsing03@umd.edu|
 
 
 ## Introduction
@@ -68,8 +67,5 @@ Launch gazebo using launch file and then run the below 2 commands to start the c
 
 `ros2 topic pub /joint_position_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.3,0.3,0.3,0.3],layout: {dim:[], data_offset: 1"}}`
 
-Tried using this command but did not works try new commands
-
-https://www.youtube.com/watch?v=BmLdjLNJHoY
-
+# Joint State Publisher Gui Package
 sudo apt-get install ros-galactic-joint-state-publisher-gui
