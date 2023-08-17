@@ -17,11 +17,10 @@ import random
 def generate_launch_description():
 
     ####### DATA INPUT ##########
-    urdf_file = 'robotaxi.urdf'
     xacro_file = "robotaxi.urdf.xacro"
-    #xacro_file = "box_bot.xacro"
+
     package_description = "project_legion"
-    use_urdf = False
+
     # Position and orientation
     # [X, Y, Z]
     position = [0.0, 0.0, 0.5]
@@ -31,23 +30,21 @@ def generate_launch_description():
     robot_base_name = "robotaxi"
     ####### DATA INPUT END ##########
 
-    if use_urdf:
-        # print("URDF URDF URDF URDF URDF URDF URDF URDF URDF URDF URDF ==>")
-        robot_desc_path = os.path.join(get_package_share_directory(
-            package_description), "robot", urdf_file)
-    else:
-        # print("XACRO XACRO XACRO XACRO XACRO XACRO XACRO XACRO XACRO XACRO XACRO ==>")
-        robot_desc_path = os.path.join(get_package_share_directory(
-            package_description), "urdf", xacro_file)
+    # Path to robot model XACRO File
+    robot_desc_path = os.path.join(get_package_share_directory(
+        package_description), "urdf", xacro_file)
 
+
+    # Robot Description in XACRO Format
     robot_desc = xacro.process_file(robot_desc_path)
-    xml = robot_desc.toxml()
 
+    # Robot Description in XML Format
+    xml = robot_desc.toxml()
+    
+    # Entity Name
     entity_name = robot_base_name+"-"+str(random.random())
 
-    pkg_share = launch_ros.substitutions.FindPackageShare(package=package_description).find(package_description)
-
-    default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
+   
 
     # Spawn ROBOT Set Gazebo (Does not spwan robot only communicates with the Gazebo Client)
     spawn_robot = Node(
@@ -76,15 +73,18 @@ def generate_launch_description():
                    ]
     )
 
-    # Robot State Publisher
+    # Launch Config for Simulation Time
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
+    # Robot State Publisher Node
     robot_state_publisher= Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         parameters=[{'use_sim_time': use_sim_time, 'robot_description': xml}],
         output="screen"
     )
+
+    # Joint State Publisher Node
 
     joint_state_publisher_node = launch_ros.actions.Node(
         package='joint_state_publisher',
@@ -94,19 +94,22 @@ def generate_launch_description():
     )
 
 
-
+    # Joint State Broadcaster Node
     joint_state_broadcaster_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
     )
 
+
+    # Joint Velocity Controller Node
     robot_velocity_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["joint_velocity_controller", "--controller-manager", "/controller_manager"],
     )
 
+    # Joint Position Controller Node
     robot_position_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
@@ -129,13 +132,20 @@ def generate_launch_description():
         )
     )
 
+    # Static TF Transform
+    tf=Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_transform_publisher',
+        output='screen',
+        arguments=['1', '0', '0', '0', '0', '0', '1', '/map',  '/dummy_link' ,'10' ],
+    )
+
     # create and return launch description object
     return LaunchDescription(
         [   
             launch.actions.DeclareLaunchArgument(name='gui', default_value='True',
                                             description='Flag to enable joint_state_publisher_gui'),
-            launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
-                                                description='Absolute path to rviz config file'),
             launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='True',
                                             description='Flag to enable use_sim_time'),
             publish_robot_description,
@@ -144,6 +154,7 @@ def generate_launch_description():
             spawn_robot,
             joint_state_broadcaster_spawner,
             delay_robot_postion_controller_spawner_after_joint_state_broadcaster_spawner,
-            delay_robot_velocity_controller_spawner_after_joint_state_broadcaster_spawner
+            delay_robot_velocity_controller_spawner_after_joint_state_broadcaster_spawner,
+            tf
         ]
     )

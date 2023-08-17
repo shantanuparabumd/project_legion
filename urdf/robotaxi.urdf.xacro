@@ -118,6 +118,7 @@
   </link>
 
   <joint name="dummy_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0" />
         <parent link="dummy_link"/>
         <child link="base_link"/>
   </joint>
