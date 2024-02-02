@@ -6,86 +6,91 @@
   name="robotaxi" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:macro name="body_color">
-  <visual>
-    <material>
-      <ambient>0.250980392156863 0.250980392156863 0.250980392156863 1</ambient>
-      <diffuse>0.250980392156863 0.250980392156863 0.250980392156863 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <emissive>0 0 0 0</emissive>
-    </material>
-  </visual>
-</xacro:macro>
+    <visual>
+      <material>
+        <ambient>0.250980392156863 0.250980392156863 0.250980392156863 1</ambient>
+        <diffuse>0.250980392156863 0.250980392156863 0.250980392156863 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
 
-<xacro:macro name="axle_color">
-  <visual>
-    <material>
-      <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
-      <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <emissive>0 0 0 0</emissive>
-    </material>
-  </visual>
-</xacro:macro>
+  <xacro:macro name="axle_color">
+    <visual>
+      <material>
+        <ambient>0.792156862745098 0.819607843137255 0.933333333333333 1</ambient>
+        <diffuse>0.792156862745098 0.819607843137255 0.933333333333333 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
 
-<xacro:macro name="side_pane_color">
-  <visual>
-    <material>
-      <ambient>0.501960784313725 1 0.501960784313725 1</ambient>
-      <diffuse>0.501960784313725 1 0.501960784313725 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <emissive>0 0 0 0</emissive>
-    </material>
-  </visual>
-</xacro:macro>
+  <xacro:macro name="side_pane_color">
+    <visual>
+      <material>
+        <ambient>0.501960784313725 1 0.501960784313725 1</ambient>
+        <diffuse>0.501960784313725 1 0.501960784313725 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
 
-<xacro:macro name="top_color">
-  <visual>
-    <material>
-      <ambient>0 0.752941176470588 0 1</ambient>
-      <diffuse>0 0.752941176470588 0 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <emissive>0 0 0 0</emissive>
-    </material>
-  </visual>
-</xacro:macro>
+  <xacro:macro name="top_color">
+    <visual>
+      <material>
+        <ambient>0 0.752941176470588 0 1</ambient>
+        <diffuse>0 0.752941176470588 0 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
 
-<xacro:macro name="wheel_color">
-  <visual>
-    <material>
-      <ambient>0 0 0 1</ambient>
-      <diffuse>0 0 0 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <emissive>0 0 0 0</emissive>
-    </material>
-  </visual>
-</xacro:macro>
+  <xacro:macro name="wheel_color">
+    <visual>
+      <material>
+        <ambient>0 0 0 1</ambient>
+        <diffuse>0 0 0 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
 
-<xacro:macro name="lidar_color">
-  <visual>
-    <material>
-      <ambient>0 0 0 1</ambient>
-      <diffuse>0 0 0 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <emissive>0 0 0 0</emissive>
-    </material>
-  </visual>
-</xacro:macro>
+  <xacro:macro name="lidar_color">
+    <visual>
+      <material>
+        <ambient>0 0 0 1</ambient>
+        <diffuse>0 0 0 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
 
+
+  <link name="dummy_link">
+    </link>
+    
+    
   <link
-    name="body">
+    name="base_link">
     <inertial>
       <origin
-        xyz="-5.21780361655602E-05 -2.37407212439023E-05 0.604812969920948"
+        xyz="-5.2178036165576E-05 -2.37407212439011E-05 0.604812969920948"
         rpy="0 0 0" />
       <mass
         value="4615.47805567614" />
       <inertia
         ixx="1863.24455406167"
-        ixy="0.0132219930650718"
-        ixz="-0.0745602857100425"
+        ixy="0.0132219930650514"
+        ixz="-0.0745602857101196"
         iyy="8715.44296968045"
-        iyz="-0.0273565484550983"
-        izz="9003.50747380204" />
+        iyz="-0.0273565484551048"
+        izz="9003.50747380203" />
     </inertial>
     <visual>
       <origin
@@ -93,7 +98,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/body.STL" />
+          filename="package://project_legion/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -107,25 +112,32 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/body.STL" />
+          filename="package://project_legion/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
+
+  <joint name="dummy_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <parent link="dummy_link"/>
+        <child link="base_link"/>
+  </joint>
+
   <link
     name="front_right_axel">
     <inertial>
       <origin
-        xyz="1.59254307730881 -0.770387884139879 0.306936663484025"
+        xyz="7.22269732911229E-09 -0.0906949566483326 0.106936664568276"
         rpy="0 0 0" />
       <mass
-        value="4.73802510796172" />
+        value="4.73802510742154" />
       <inertia
-        ixx="0.0990829916203824"
-        ixy="-0.00564103885906436"
-        ixz="0.000108229508691783"
-        iyy="0.0311714791660352"
-        iyz="0.00131190404983014"
-        izz="0.106577267989412" />
+        ixx="0.0995483725414788"
+        ixy="1.31296102047959E-09"
+        ixz="-1.57301902386985E-09"
+        iyy="0.0307060985233193"
+        iyz="0.0013163608882011"
+        izz="0.106577268300346" />
     </inertial>
     <visual>
       <origin
@@ -155,34 +167,34 @@
     name="front_right_axel_joint"
     type="revolute">
     <origin
-      xyz="0 0 0"
+      xyz="1.6 -0.68 0.2"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
       link="front_right_axel" />
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1000" />
   </joint>
   <link
     name="front_right_wheel">
     <inertial>
       <origin
-        xyz="1.57025410376083 -1.04055974237639 0.309999999999996"
+        xyz="0 -0.000784668229028895 -1.11022302462516E-16"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
-        ixx="19.7127728680101"
-        ixy="1.16262531983733"
-        ixz="5.70065896608079E-15"
-        iyy="33.7094191498882"
-        iyz="5.93281734338829E-14"
+        ixx="19.6168571900673"
+        ixy="1.10879109651903E-15"
+        ixz="5.72594272343911E-16"
+        iyy="33.8053348278309"
+        iyz="4.98336858770083E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -196,7 +208,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -211,37 +223,32 @@
   </link>
   <joint
     name="front_right_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0 0 0"
+      xyz="0 -0.361 0.11"
       rpy="0 0 0" />
     <parent
       link="front_right_axel" />
     <child
       link="front_right_wheel" />
     <axis
-      xyz="0.0822198916962624 0.996614212927678 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="front_left_axel">
     <inertial>
       <origin
-        xyz="1.6565368692559 0.750916554199098 0.30693666413595"
+        xyz="-7.22269799524611E-09 0.0906949566483317 0.106936664568277"
         rpy="0 0 0" />
       <mass
-        value="4.73802513910441" />
+        value="4.73802510742154" />
       <inertia
-        ixx="0.0727966036899852"
-        ixy="-0.033555856058096"
-        ixz="-0.0008205838617529"
-        iyy="0.0574578673139121"
-        iyz="-0.00102929493752076"
-        izz="0.106577268204647" />
+        ixx="0.0995483725414789"
+        ixy="1.31296104323952E-09"
+        ixz="1.57301903314861E-09"
+        iyy="0.0307060985233193"
+        iyz="-0.00131636088820162"
+        izz="0.106577268300346" />
     </inertial>
     <visual>
       <origin
@@ -271,34 +278,34 @@
     name="front_left_axel_joint"
     type="revolute">
     <origin
-      xyz="0 0 0"
+      xyz="1.6 0.68 0.2"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
       link="front_left_axel" />
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1000" />
   </joint>
   <link
     name="front_left_wheel">
     <inertial>
       <origin
-        xyz="1.82552714195732 0.962888059850802 0.310000000000004"
+        xyz="2.22044604925031E-16 0.000784668229028895 0"
         rpy="0 0 0" />
       <mass
-        value="220.204654088327" />
+        value="220.204654088326" />
       <inertia
-        ixx="25.1304300235974"
-        ixy="6.91590337281265"
-        ixz="2.78109008982202E-14"
-        iyy="28.2917619943008"
-        iyz="2.83392710451218E-14"
+        ixx="19.6168571900673"
+        ixy="-2.0242871863207E-15"
+        ixz="1.40172771935682E-15"
+        iyy="33.8053348278309"
+        iyz="4.94762339235896E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -312,7 +319,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -327,153 +334,32 @@
   </link>
   <joint
     name="front_left_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0 0 0"
+      xyz="0 0.361 0.110000000000001"
       rpy="0 0 0" />
     <parent
       link="front_left_axel" />
     <child
       link="front_left_wheel" />
     <axis
-      xyz="-0.623373961813521 -0.781923847783731 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="back_left_axel">
-    <inertial>
-      <origin
-        xyz="-1.59022260058956 0.770166389684527 0.306936663157127"
-        rpy="0 0 0" />
-      <mass
-        value="4.73802514179161" />
-      <inertia
-        ixx="0.0987482879826517"
-        ixy="-0.00737831489877384"
-        ixz="-0.000141909273981146"
-        iyy="0.0315061827691447"
-        iyz="-0.00130868926283995"
-        izz="0.106577267921633" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/back_left_axel.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/back_left_axel.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="back_left_axel_joint"
-    type="revolute">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="body" />
-    <child
-      link="back_left_axel" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="back_left_wheel">
-    <inertial>
-      <origin
-        xyz="-1.56099765956285 1.03967619271508 0.310000000000004"
-        rpy="0 0 0" />
-      <mass
-        value="220.204654088327" />
-      <inertia
-        ixx="19.7817557340667"
-        ixy="1.52068003676715"
-        ixz="-1.41066843422813E-16"
-        iyy="33.6404362838315"
-        iyz="5.35623170831363E-14"
-        izz="19.6168571900673" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/back_left_wheel.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/back_left_wheel.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="back_left_wheel_joint"
-    type="revolute">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="back_left_axel" />
-    <child
-      link="back_left_wheel" />
-    <axis
-      xyz="-0.107805398797207 -0.99417201529221 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      xyz="0 -1 0" />
   </joint>
   <link
     name="back_right_axel">
     <inertial>
       <origin
-        xyz="-1.59503401167827 -0.770558897464385 0.306936665235939"
+        xyz="7.22269732911229E-09 -0.0906949566483326 0.106936664568276"
         rpy="0 0 0" />
       <mass
-        value="4.73802497254448" />
+        value="4.73802510742154" />
       <inertia
-        ixx="0.0993419772005463"
-        ixy="0.00376378875483251"
-        ixz="-7.20785636933185E-05"
-        iyy="0.0309124938085499"
-        iyz="0.00131438606605443"
-        izz="0.106577268357977" />
+        ixx="0.0995483725414788"
+        ixy="1.31296104260797E-09"
+        ixz="-1.57301902354649E-09"
+        iyy="0.0307060985233193"
+        iyz="0.00131636088820109"
+        izz="0.106577268300346" />
     </inertial>
     <visual>
       <origin
@@ -503,34 +389,34 @@
     name="back_right_axel_joint"
     type="revolute">
     <origin
-      xyz="0 0 0"
+      xyz="-1.6 -0.68 0.2"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
       link="back_right_axel" />
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1000" />
   </joint>
   <link
     name="back_right_wheel">
     <inertial>
       <origin
-        xyz="-1.58019056769578 -1.04124193078514 0.309999999999997"
+        xyz="0 -0.000784668229028895 5.55111512312578E-17"
         rpy="0 0 0" />
       <mass
         value="220.204654088327" />
       <inertia
-        ixx="19.6593954325899"
-        ixy="-0.775721213261626"
-        ixz="-1.12449279054662E-15"
-        iyy="33.7627965853084"
-        iyz="5.12487286095604E-14"
+        ixx="19.6168571900673"
+        ixy="-2.86370706793178E-15"
+        ixz="2.3236851581442E-15"
+        iyy="33.8053348278309"
+        iyz="4.79723920191717E-14"
         izz="19.6168571900673" />
     </inertial>
     <visual>
@@ -544,7 +430,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -559,37 +445,32 @@
   </link>
   <joint
     name="back_right_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0 0 0"
+      xyz="0 -0.361 0.11"
       rpy="0 0 0" />
     <parent
       link="back_right_axel" />
     <child
       link="back_right_wheel" />
     <axis
-      xyz="-0.0547547589597665 0.998499832935018 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      xyz="0 1 0" />
   </joint>
   <link
-    name="lidar_front_right">
+    name="back_left_axel">
     <inertial>
       <origin
-        xyz="2.10240622729717 -1.10240622729716 1.78815355406656"
+        xyz="-7.22269666297848E-09 0.0906949566483317 0.106936664568277"
         rpy="0 0 0" />
       <mass
-        value="8.51764060451499" />
+        value="4.73802510742154" />
       <inertia
-        ixx="0.0642189157299355"
-        ixy="-0.000191353707477661"
-        ixz="0.000174493122027139"
-        iyy="0.0642189157299355"
-        iyz="-0.000174493122027053"
-        izz="0.0429541548113749" />
+        ixx="0.099548372541479"
+        ixy="1.31296101947886E-09"
+        ixz="1.57301902619011E-09"
+        iyy="0.0307060985233193"
+        iyz="-0.00131636088820162"
+        izz="0.106577268300346" />
     </inertial>
     <visual>
       <origin
@@ -597,7 +478,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/lidar_front_right.STL" />
+          filename="package://project_legion/meshes/back_left_axel.STL" />
       </geometry>
       <material
         name="">
@@ -611,28 +492,404 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/lidar_front_right.STL" />
+          filename="package://project_legion/meshes/back_left_axel.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="lidar_front_right_joint"
-    type="fixed">
+    name="back_left_axel_joint"
+    type="revolute">
     <origin
-      xyz="0 0 0"
+      xyz="-1.6 0.68 0.2"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
-      link="lidar_front_right" />
+      link="back_left_axel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1000" />
+  </joint>
+  <link
+    name="back_left_wheel">
+    <inertial>
+      <origin
+        xyz="0 0.000784668229028895 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="220.204654088327" />
+      <inertia
+        ixx="19.6168571900673"
+        ixy="2.50154705894417E-15"
+        ixz="-4.07397097827721E-15"
+        iyy="33.8053348278309"
+        iyz="4.95076049673552E-14"
+        izz="19.6168571900673" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/back_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/back_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.361 0.110000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="back_left_axel" />
+    <child
+      link="back_left_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="front">
+    <inertial>
+      <origin
+        xyz="-0.0599999999999998 -6.45556177026366E-16 0.16174583422535"
+        rpy="0 0 0" />
+      <mass
+        value="238.283902102743" />
+      <inertia
+        ixx="91.2445420486073"
+        ixy="-3.03407211392028E-16"
+        ixz="-4.11342691007461E-16"
+        iyy="30.1909069158719"
+        iyz="-1.23259542573727E-13"
+        izz="61.6255164977819" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/front.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_joint"
+    type="fixed">
+    <origin
+      xyz="2 0 1"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="lidar_front_left">
+    name="back">
     <inertial>
       <origin
-        xyz="2.10240622729716 1.10240622729716 1.78815355406657"
+        xyz="0.0600000000000001 -5.31171439350192E-16 0.16174583422535"
+        rpy="0 0 0" />
+      <mass
+        value="238.283902102743" />
+      <inertia
+        ixx="91.2445420486072"
+        ixy="-2.58236719045494E-16"
+        ixz="1.67397202198221E-16"
+        iyy="30.1909069158719"
+        iyz="-1.15817890380939E-13"
+        izz="61.6255164977819" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/back.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_joint"
+    type="fixed">
+    <origin
+      xyz="-2 0 1"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right">
+    <inertial>
+      <origin
+        xyz="1.42066406747502E-16 -0.0600000000000011 0.225785335083629"
+        rpy="0 0 0" />
+      <mass
+        value="269.579902102743" />
+      <inertia
+        ixx="29.0495518679719"
+        ixy="-1.20383938267802E-16"
+        ixz="2.94139038100261E-14"
+        iyy="417.804106229136"
+        iyz="9.89142758680684E-14"
+        izz="389.401546126211" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.88 1"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left">
+    <inertial>
+      <origin
+        xyz="1.3362379962906E-16 -0.0600000000000008 0.225785335083629"
+        rpy="0 0 0" />
+      <mass
+        value="269.579902102743" />
+      <inertia
+        ixx="29.0495518679719"
+        ixy="-1.20383938267802E-16"
+        ixz="2.95831600997074E-14"
+        iyy="417.804106229136"
+        iyz="9.90076534888227E-14"
+        izz="389.401546126211" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="fixed">
+    <origin
+      xyz="0 1 1"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="top">
+    <inertial>
+      <origin
+        xyz="1.05737798788626E-15 -3.8470235382278E-17 -0.161525009353001"
+        rpy="0 0 0" />
+      <mass
+        value="1431.79274848221" />
+      <inertia
+        ixx="675.858793348103"
+        ixy="-0.000168194562486687"
+        ixz="5.17453529676043E-13"
+        iyy="2286.6645250204"
+        iyz="-1.99588589821439E-12"
+        izz="2900.47257026417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/top.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.752941176470588 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/top.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 2.22"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="top" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_right_lidar">
+    <inertial>
+      <origin
+        xyz="-0.0040420953035909 0.00404209530359112 -0.131846445933433"
+        rpy="0 0 0" />
+      <mass
+        value="8.51764060451499" />
+      <inertia
+        ixx="0.0642189157299355"
+        ixy="-0.000191353707477662"
+        ixz="0.00017449312202714"
+        iyy="0.0642189157299355"
+        iyz="-0.000174493122027057"
+        izz="0.0429541548113749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/front_right_lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_legion/meshes/front_right_lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_lidar_joint"
+    type="fixed">
+    <origin
+      xyz="2.1064 -1.1064 1.92"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_lidar">
+    <inertial>
+      <origin
+        xyz="-0.00404209530359134 -0.00404209530359023 -0.131846445933433"
         rpy="0 0 0" />
       <mass
         value="8.51764060451499" />
@@ -650,12 +907,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/lidar_front_left.STL" />
+          filename="package://project_legion/meshes/front_left_lidar.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -664,81 +921,28 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/lidar_front_left.STL" />
+          filename="package://project_legion/meshes/front_left_lidar.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="lidar_front_left_joint"
+    name="front_left_lidar_joint"
     type="fixed">
     <origin
-      xyz="0 0 0"
+      xyz="2.1064 1.1064 1.92"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
-      link="lidar_front_left" />
+      link="front_left_lidar" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="lidar_back_left">
+    name="back_right_lidar">
     <inertial>
       <origin
-        xyz="-2.10240622729717 1.10240622729715 1.78815355406657"
-        rpy="0 0 0" />
-      <mass
-        value="8.51764060451498" />
-      <inertia
-        ixx="0.0642189157299355"
-        ixy="-0.000191353707477656"
-        ixz="-0.000174493122027137"
-        iyy="0.0642189157299354"
-        iyz="0.000174493122027215"
-        izz="0.0429541548113749" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/lidar_back_left.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/lidar_back_left.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="lidar_back_left_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="body" />
-    <child
-      link="lidar_back_left" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="lidar_back_right">
-    <inertial>
-      <origin
-        xyz="-2.10240622729716 -1.10240622729717 1.78815355406656"
+        xyz="0.00404209530359045 0.0040420953035909 -0.131846445933433"
         rpy="0 0 0" />
       <mass
         value="8.51764060451498" />
@@ -756,12 +960,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/lidar_back_right.STL" />
+          filename="package://project_legion/meshes/back_right_lidar.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -770,38 +974,38 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/lidar_back_right.STL" />
+          filename="package://project_legion/meshes/back_right_lidar.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="lidar_back_right_joint"
+    name="back_right_lidar_joint"
     type="fixed">
     <origin
-      xyz="0 0 0"
+      xyz="-2.1064 -1.1064 1.92"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
-      link="lidar_back_right" />
+      link="back_right_lidar" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="side_pane_1">
+    name="back_left_lidar">
     <inertial>
       <origin
-        xyz="1.19387690613411E-15 0.939999999999996 1.22578533508363"
+        xyz="0.0040420953035909 -0.00404209530359023 -0.131846445933433"
         rpy="0 0 0" />
       <mass
-        value="269.579902102743" />
+        value="8.51764060451499" />
       <inertia
-        ixx="29.0495518679719"
-        ixy="-1.20383938267813E-16"
-        ixz="3.27421223583015E-14"
-        iyy="417.804106229136"
-        iyz="9.89684859766926E-14"
-        izz="389.401546126211" />
+        ixx="0.0642189157299354"
+        ixy="-0.000191353707477656"
+        ixz="-0.000174493122027137"
+        iyy="0.0642189157299354"
+        iyz="0.000174493122027215"
+        izz="0.0429541548113749" />
     </inertial>
     <visual>
       <origin
@@ -809,12 +1013,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/side_pane_1.STL" />
+          filename="package://project_legion/meshes/back_left_lidar.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -823,263 +1027,51 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_legion/meshes/side_pane_1.STL" />
+          filename="package://project_legion/meshes/back_left_lidar.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="side_pane_1_joint"
+    name="back_left_lidar_joint"
     type="fixed">
     <origin
-      xyz="0 0 0"
+      xyz="-2.10644832260076 1.10644832260074 1.92"
       rpy="0 0 0" />
     <parent
-      link="body" />
+      link="base_link" />
     <child
-      link="side_pane_1" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="side_pane_2">
-    <inertial>
-      <origin
-        xyz="7.36854275917892E-17 -0.940000000000004 1.22578533508363"
-        rpy="0 0 0" />
-      <mass
-        value="269.579902102743" />
-      <inertia
-        ixx="29.0495518679719"
-        ixy="-1.20383938267801E-16"
-        ixz="2.9415137108934E-14"
-        iyy="417.804106229136"
-        iyz="9.89935929190605E-14"
-        izz="389.401546126211" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/side_pane_2.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/side_pane_2.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="side_pane_2_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="body" />
-    <child
-      link="side_pane_2" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="side_pane_3">
-    <inertial>
-      <origin
-        xyz="-1.94 -4.0299328481463E-15 1.16174583422535"
-        rpy="0 0 0" />
-      <mass
-        value="238.283902102743" />
-      <inertia
-        ixx="91.2445420486072"
-        ixy="-2.58236719045494E-16"
-        ixz="1.67397202198221E-16"
-        iyy="30.1909069158719"
-        iyz="-1.1589443866755E-13"
-        izz="61.6255164977819" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/side_pane_3.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/side_pane_3.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="side_pane_3_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="body" />
-    <child
-      link="side_pane_3" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="side_pane_4">
-    <inertial>
-      <origin
-        xyz="8.11876186905901E-17 -0.16174583422535 -0.0599999999999998"
-        rpy="0 0 0" />
-      <mass
-        value="238.283902102743" />
-      <inertia
-        ixx="30.1909069158719"
-        ixy="-1.35061898246685E-14"
-        ixz="3.03407211392029E-16"
-        iyy="61.6255164977819"
-        iyz="4.1134269100746E-16"
-        izz="91.2445420486072" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/side_pane_4.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/side_pane_4.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="side_pane_4_joint"
-    type="fixed">
-    <origin
-      xyz="2 0 1"
-      rpy="-1.5707963267949 0 -1.5707963267949" />
-    <parent
-      link="body" />
-    <child
-      link="side_pane_4" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="top">
-    <inertial>
-      <origin
-        xyz="1.579007960937E-15 -8.23001329418906E-15 2.058474990647"
-        rpy="0 0 0" />
-      <mass
-        value="1431.79274848221" />
-      <inertia
-        ixx="675.858793348103"
-        ixy="-0.000168194562486687"
-        ixz="5.13110389472562E-13"
-        iyy="2286.6645250204"
-        iyz="-1.99695025936543E-12"
-        izz="2900.47257026417" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/top.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_legion/meshes/top.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="top_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="body" />
-    <child
-      link="top" />
+      link="back_left_lidar" />
     <axis
       xyz="0 0 0" />
   </joint>
 
-  <gazebo reference="body">
+  <gazebo reference="base_link">
     <xacro:body_color />
   </gazebo>
-  <gazebo reference="side_pane_1">
+  <gazebo reference="right">
     <xacro:side_pane_color />
   </gazebo>
-  <gazebo reference="side_pane_2">
+  <gazebo reference="left">
     <xacro:side_pane_color />
   </gazebo>
-  <gazebo reference="side_pane_3">
+  <gazebo reference="back">
     <xacro:side_pane_color />
   </gazebo>
-  <gazebo reference="side_pane_4">
+  <gazebo reference="front">
     <xacro:side_pane_color />
   </gazebo>
   
   
-  <gazebo reference="front_right_axle">
+  <gazebo reference="front_right_axel">
     <xacro:axle_color />
   </gazebo>
-  <gazebo reference="front_left_axle">
+  <gazebo reference="front_left_axel">
     <xacro:axle_color />
   </gazebo>
-  <gazebo reference="back_right_axle">
+  <gazebo reference="back_right_axel">
     <xacro:axle_color />
   </gazebo>
-  <gazebo reference="back_left_axle">
+  <gazebo reference="back_left_axel">
     <xacro:axle_color />
   </gazebo>
 
@@ -1098,16 +1090,16 @@
   </gazebo>
 
 
-  <gazebo reference="lidar_front_left">
+  <gazebo reference="front_left_lidar">
     <xacro:lidar_color />
   </gazebo>
-  <gazebo reference="lidar_front_right">
+  <gazebo reference="front_right_lidar">
     <xacro:lidar_color />
   </gazebo>
-  <gazebo reference="lidar_back_left">
+  <gazebo reference="back_left_lidar">
     <xacro:lidar_color />
   </gazebo>
-  <gazebo reference="lidar_back_right">
+  <gazebo reference="back_right_lidar">
     <xacro:lidar_color />
   </gazebo>
 
@@ -1115,4 +1107,228 @@
     <xacro:top_color />
   </gazebo>
 
+
+  <!-- Adding Controllers -->
+  <ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+  <joint name="back_right_wheel_joint">
+    <command_interface name="velocity">
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="front_right_wheel_joint">
+    <command_interface name="velocity">
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="back_left_wheel_joint">
+    <command_interface name="velocity">
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="front_left_wheel_joint">
+    <command_interface name="velocity">
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="front_left_axel_joint">
+    <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="back_left_axel_joint">
+    <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="front_right_axel_joint">
+    <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="back_right_axel_joint">
+    <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  </ros2_control>
+
+
+  <gazebo>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find project_legion)/config/control.yaml</parameters>
+      </plugin>
+  </gazebo>
+
+  <gazebo reference="front_left_lidar">
+  <sensor name="lidar" type="ray">
+    <pose>0.215 0 0.215 0 0 0</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan_1" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan_1</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>front_left_lidar</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>
+
+  <gazebo reference="back_right_lidar">
+  <sensor name="lidar" type="ray">
+    <pose>0.215 0 0.215 0 0 0</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan_2" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan_2</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>back_right_lidar</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>
+
+  <gazebo reference="back_left_lidar">
+  <sensor name="lidar" type="ray">
+    <pose>0.215 0 0.215 0 0 0</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan_3" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan_3</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>back_left_lidar</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>
+
+  <gazebo reference="front_right_lidar">
+  <sensor name="lidar" type="ray">
+    <pose>0.215 0 0.215 0 0 0</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan_4" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan_4</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>front_right_lidar</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>
+  
+  
 </robot>
