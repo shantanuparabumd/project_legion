@@ -1,0 +1,13 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/shantanu/ros2_ws/install/launch_param_builder/lib/python3.8/site-packages",
+        "/home/shantanu/ros2_ws/install/drone_plugin/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/shantanu/ros2_ws/install/launch_param_builder/lib/python3.8/site-packages",
+        "/home/shantanu/ros2_ws/install/drone_plugin/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ],
+    "cmake.configureOnOpen": false
+}
