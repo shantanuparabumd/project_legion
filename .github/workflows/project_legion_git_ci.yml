@@ -63,7 +63,9 @@ jobs:
         run: |
           source /opt/ros/galactic/setup.bash
           mkdir -p ~/ros_ws/src
+          ls
           cd ros_ws
+          ls
           colcon build
           source install/setup.bash
 
@@ -76,6 +78,8 @@ jobs:
       - name: Build Package
         run: |
           source /opt/ros/galactic/setup.bash
-          cd ros_ws
+          ls
+          cd ~/ros_ws
+          ls
           rosdep install -i --from-path src --rosdistro galactic -y
           colcon build
