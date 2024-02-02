@@ -33,9 +33,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      # We want to use GitHub CI checkout version 3 for checking out the branch
-      - uses: actions/checkout@v3
-
+      
       # Install some system pacakges
       - name: Install ROS 2 Galactic packages
         run: |
@@ -47,6 +45,20 @@ jobs:
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
           sudo apt update
           sudo apt install -y ros-galactic-ros-base python3-colcon-common-extensions
+
+
+      - name: Setup Workspace
+        run: |
+          source /opt/ros/galactic/setup.bash
+          mkdir -p ros_ws/src/project_legion
+          cd ros_ws
+          colcon build
+          source install/setup.bash
+
+      # We want to use GitHub CI checkout version 3 for checking out the branch
+      - uses: actions/checkout@v3
+        with:
+          path: ros_ws/src/project_legion
 
       # Build for test coverage
       - name: Configure CMake flags and build exectables
