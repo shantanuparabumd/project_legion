@@ -22,15 +22,39 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install ROS Galactic
+        run: |
+          locale  # check for UTF-8
+
+          sudo apt update && sudo apt install locales
+          sudo locale-gen en_US en_US.UTF-8
+          sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+          export LANG=en_US.UTF-8
+          
+          locale  # verify settings
+      
+      - name: Setup Resources
+        run: |
+          sudo apt install software-properties-common
+          sudo add-apt-repository universe
+
+      - name: Add ROS2 GPG Key
+        run: |
+          sudo apt update && sudo apt install curl
+          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+      - name: Add Repository to source list
+        run: echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Install ROS2 Packages
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          sudo apt update
+          sudo apt upgrade
+      
+      - name: Install ROS2 Galactic
+        run: sudo apt install ros-galactic-ros-base
