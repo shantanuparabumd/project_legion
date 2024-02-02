@@ -60,7 +60,13 @@ jobs:
         run: sudo apt install ros-galactic-ros-base
 
       - name: Workspace Setup
-        run: mkdir -p ~/ros_ws/src
+        run: |
+          source /opt/ros/galactic/setup.bash
+          mkdir -p ~/ros_ws/src
+          cd ros_ws
+          colcon build
+          source install/setup.bash
+
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -70,6 +76,6 @@ jobs:
       - name: Build Package
         run: |
           source /opt/ros/galactic/setup.bash
-          rosdep install -i --from-path src --rosdistro galactic -y
           cd ros_ws
+          rosdep install -i --from-path src --rosdistro galactic -y
           colcon build
