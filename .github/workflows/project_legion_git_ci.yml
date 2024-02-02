@@ -52,7 +52,7 @@ jobs:
       - name: Configure CMake flags and build exectables
         run: |
           source /opt/ros/galactic/setup.bash
-          colcon build --packages-select project_chakravyu
+          colcon build --packages-select project_legion
 
     
 
