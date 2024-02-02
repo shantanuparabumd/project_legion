@@ -58,3 +58,18 @@ jobs:
       
       - name: Install ROS2 Galactic
         run: sudo apt install ros-galactic-ros-base
+
+      - name: Workspace Setup
+        run: mkdir -p ~/ros_ws/src
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+        with:
+         path: ros_ws/src/project_legion
+        
+      - name: Build Package
+        run: |
+          source /opt/ros/galactic/setup.bash
+          rosdep install -i --from-path src --rosdistro galactic -y
+          cd ros_ws
+          colcon build
