@@ -93,7 +93,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ${{github.workspace}}/install/project_legion/lib/project_legion/coverage_cleaned.info
+          files: ${{github.workspace}}/ros_ws/install/project_legion/lib/project_legion/coverage_cleaned.info
           # flags: unittests # optional
           # directory: ${{github.workspace}}/install/
           # name: codecov-umbrella # optional
