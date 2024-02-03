@@ -60,7 +60,6 @@ int KeyboardTeleop::test_function(int a, int b){
     return a + b;
 }
 
-Hello
 /**
  * @brief Function to publish the message to the velocity and position controllers
  * after reading the key from the keyboard
