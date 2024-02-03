@@ -2,9 +2,7 @@
 # Project Legion
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
-
 [![codecov](https://codecov.io/gh/shantanuparabumd/project_legion/graph/badge.svg?token=WS0I96DIDU)](https://codecov.io/gh/shantanuparabumd/project_legion)
-
 ![Build Status](https://github.com/shantanuparabumd/project_legion/actions/workflows/project_legion_git_ci.yml/badge.svg)
 
 
