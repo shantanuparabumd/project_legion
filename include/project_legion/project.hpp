@@ -8,7 +8,8 @@
  * @copyright Copyright (c) 2024
  * 
  */
-#pragma once
+#ifndef PROJECT_HPP
+#define PROJECT_HPP
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
@@ -53,3 +54,4 @@ private:
 };
 
 
+#endif

@@ -15,8 +15,6 @@ on:
   push:
     branches:
       - main
-      - iteration_1
-      - iteration_2
 
   # Triggered whenever a pull request is created on master
   pull_request:
@@ -69,27 +67,35 @@ jobs:
           rosdep update --include-eol-distros
           cd ros_ws
           rosdep install --from-paths src -y --ignore-src
-          colcon build --packages-select project_legion
-
+          colcon build --cmake-args -DCOVERAGE=1 --packages-select project_legion
+          cat log/latest_build/project_legion/stdout_stderr.log
+          find build/project_legion/ | grep -E 'gcno' # catch error -- exepct to see .gcno files
     
 
-      # Run CMake to setup compilation flags
-      # - name: Configure Coverage CMake
-      #   run: cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -B ${{github.workspace}}/build
+      - name: Run unit test and check code error
+        run: |
+          source /opt/ros/galactic/setup.bash
+          cd ros_ws
+          colcon test --packages-select project_legion
+          cat log/latest_test/project_legion/stdout_stderr.log
+          find build/project_legion/ | grep -E 'gcda' # catch error -- expect to see .gcda files
+          colcon test-result --test-result-base build/project_legion/ # catch error
 
-      # Compile and executables
-      # - name: Build Coverage
-      #   working-directory: ${{github.workspace}}
-      #   run: make
+      # Generate code coverage test report
+      - name: Generate test coverage report
+        run: |
+          cd ros_ws
+          source install/setup.bash
+          ros2 run project_legion generate_coverage_report.bash
 
-      # Run test suite and compute code coverage
-      # - name: Run Test Coverage
-      #   working-directory: ${{github.workspace}}
-      #   run: make code_coverage
-
-      # Upload coverage result to Coverage.io
-      # - name: Upload result to Coveralls.io
-      #   uses: coverallsapp/github-action@1.1.3
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     path-to-lcov: ${{github.workspace}}/build/coverage.info.cleaned
+      # Upload coverage result to CodeCov
+      - name: Upload coverage result to CodeCov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ${{github.workspace}}/install/project_legion/lib/project_legion/coverage_cleaned.info
+          # flags: unittests # optional
+          # directory: ${{github.workspace}}/install/
+          # name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
