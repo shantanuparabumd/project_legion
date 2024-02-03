@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/shantanu/ros2_ws/install/windmill/include/**",
+        "/home/shantanu/ros2_ws/install/sp_1/include/**",
+        "/home/shantanu/ros2_ws/install/project_legion/include/**",
+        "/home/shantanu/ros2_ws/install/odometry/include/**",
+        "/home/shantanu/ros2_ws/install/lidar_tower/include/**",
+        "/home/shantanu/ros2_ws/install/drone_plugin/include/**",
+        "/home/shantanu/ros2_ws/install/conveyor_belt/include/**",
+        "/opt/ros/galactic/include/**",
+        "/home/shantanu/ros2_ws/src/conveyor_belt/include/**",
+        "/home/shantanu/ros2_ws/src/drone_plugin/include/**",
+        "/home/shantanu/ros2_ws/src/lidar_tower/include/**",
+        "/home/shantanu/ros2_ws/src/odometry/include/**",
+        "/home/shantanu/ros2_ws/src/project_legion/include/**",
+        "/home/shantanu/ros2_ws/src/robotaxi/include/**",
+        "/home/shantanu/ros2_ws/src/sp_1/include/**",
+        "/home/shantanu/ros2_ws/src/windmill/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

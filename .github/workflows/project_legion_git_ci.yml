@@ -1,36 +1,99 @@
-# This is a basic workflow to help you get started with Actions
+##############################################################################
+#
+# GitGub CI workflow syntax spec:
+#    https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+#
+# Coveralls example:
+#    https://github.com/marketplace/actions/coveralls-github-action
+#
+##############################################################################
 
 name: project_legion_build
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Triggered whenever push to the master branch
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+
+  # Triggered whenever a pull request is created on master
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+    types: [opened]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    # Create a container of the latest Ubuntu, other values could be
+    # ubuntu-latest, ubuntu-22.04, etc.
     runs-on: ubuntu-20.04
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      
+      # Install some system pacakges
+      - name: Install ROS 2 Galactic packages
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          sudo apt update
+          sudo apt install -y software-properties-common
+          sudo add-apt-repository universe
+          sudo apt update && sudo apt install -y curl
+          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+          sudo apt update
+          sudo apt install -y ros-galactic-ros-base python3-colcon-common-extensions
+          sudo apt install -y lcov
+
+      - name: Setup Workspace
+        run: |
+          source /opt/ros/galactic/setup.bash
+          mkdir -p ros_ws/src/project_legion
+          cd ros_ws
+          colcon build
+          source install/setup.bash
+
+      # We want to use GitHub CI checkout version 3 for checking out the branch
+      - uses: actions/checkout@v3
+        with:
+          path: ros_ws/src/project_legion
+
+      # Build for test coverage
+      - name: Configure CMake flags and build exectables
+        run: |
+          source /opt/ros/galactic/setup.bash
+          sudo apt install python3-rosdep
+          sudo rosdep init
+          rosdep update --include-eol-distros
+          cd ros_ws
+          rosdep install --from-paths src -y --ignore-src
+          colcon build --cmake-args -DCOVERAGE=1 --packages-select project_legion
+          cat log/latest_build/project_legion/stdout_stderr.log
+          find build/project_legion/ | grep -E 'gcno' # catch error -- exepct to see .gcno files
+    
+
+      - name: Run unit test and check code error
+        run: |
+          source /opt/ros/galactic/setup.bash
+          cd ros_ws
+          colcon test --packages-select project_legion
+          cat log/latest_test/project_legion/stdout_stderr.log
+          find build/project_legion/ | grep -E 'gcda' # catch error -- expect to see .gcda files
+          colcon test-result --test-result-base build/project_legion/ # catch error
+
+      # Generate code coverage test report
+      - name: Generate test coverage report
+        run: |
+          cd ros_ws
+          source install/setup.bash
+          ros2 run project_legion generate_coverage_report.bash
+
+      # Upload coverage result to CodeCov
+      - name: Upload coverage result to CodeCov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ${{github.workspace}}/ros_ws/install/project_legion/lib/project_legion/coverage_cleaned.info
+          # flags: unittests # optional
+          # directory: ${{github.workspace}}/install/
+          # name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)

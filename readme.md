@@ -1,12 +1,9 @@
 
 # Project Legion
-<!-- 
-[![codecov](https://codecov.io/gh/jayprajapati009/project_chakravyu/branch/main/graph/badge.svg?token=0C30FZ9SC6)](https://codecov.io/gh/jayprajapati009/project_chakravyu)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) -->
-
-![Build Status](https://github.com/shantanuparabumd/project_legion/actions/workflows/project_legion_git_ci.yml/badge.svg)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
+[![codecov](https://codecov.io/gh/shantanuparabumd/project_legion/graph/badge.svg?token=WS0I96DIDU)](https://codecov.io/gh/shantanuparabumd/project_legion)
+[![project_legion_build](https://github.com/shantanuparabumd/project_legion/actions/workflows/project_legion_git_ci.yml/badge.svg)](https://github.com/shantanuparabumd/project_legion/actions/workflows/project_legion_git_ci.yml)
 
 ![Project Legion](/images/robotaxi.jpg)
 
